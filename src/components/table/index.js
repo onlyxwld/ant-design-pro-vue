@@ -40,6 +40,10 @@ export default {
     },
     showPagination: {
       default: 'auto'
+    },
+    stripe: {
+      type: Boolean,
+      default: false
     }
   }),
   watch: {
@@ -229,6 +233,16 @@ export default {
           _vm.$emit('onSelect', { selectedRowKeys: selectedRowKeys, selectedRows: selectedRows })
         }
       };
+
+      if (this.stripe) {
+        // eslint-disable-next-line no-console
+        props.rowClassName = (record, index) => {
+          if (index % 2 == 0) {
+            return 'table-stripe-odd'
+          }
+          return 'table-stripe-even'
+        }
+      }
 
       return h('div', {}, [
         h("a-alert", {

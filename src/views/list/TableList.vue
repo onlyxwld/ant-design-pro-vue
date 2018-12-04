@@ -81,6 +81,7 @@
       :columns="columns"
       :data="loadData"
       :showAlertInfo="true"
+      :stripe="true"
       @onSelect="onChange"
     >
       <span slot="action" slot-scope="text, record">
@@ -182,7 +183,6 @@
   import STable from '@/components/table/'
   import ATextarea from "ant-design-vue/es/input/TextArea"
   import AInput from "ant-design-vue/es/input/Input"
-  import moment from "moment"
 
   import { getRoleList, getServiceList } from '@/api/manage'
 
@@ -281,7 +281,7 @@
 
       resetSearchForm () {
         this.queryParam = {
-          date: moment(new Date())
+          date: null
         }
       }
     },

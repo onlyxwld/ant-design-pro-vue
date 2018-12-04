@@ -593,4 +593,15 @@
       }
     }
   }
+
+  .ant-table-body {
+    .ant-table-row {
+      &.table-stripe-odd {
+        background: #fff;
+      }
+      &.table-stripe-even {
+        background: #fffdfd;
+      }
+    }
+  }
 </style>
